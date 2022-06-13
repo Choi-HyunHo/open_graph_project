@@ -13,16 +13,18 @@ const ModalBtn = () => {
   // 모달 상태 관리
   const [showModal, setShowModal] = useState(false);
   
-
   const openModal = () => {
     setShowModal(true);
   };
 
+  const closeModal = () =>{
+    setShowModal(false)
+  }
 
   return (
     <>
       <ModalButton onClick={openModal}>🔗</ModalButton>
-      <Modal showModal={showModal}/>
+      <Modal showModal={showModal} closeModal={closeModal}/>
     </>
   );
 };

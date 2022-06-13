@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
-
 
 const ModalContainer = styled.div`
     position: fixed;
@@ -16,32 +14,27 @@ const ModalContainer = styled.div`
 `;
 
 const ModalPosition = styled.div`
-  disflex : flex;
-  justfi-content : space-between;
+  display : flex;
+  justify-content: space-between;
 `
 
 const CloseBtn = styled.button`
   border : none;
-  background-color: white;
+  background-color: #262626;
   font-size : 16px;
   cursor : pointer;
 `
 
-const Modal = ({showModal}) => {
-
-  const [closeModal, setCloseModal] = useState(true);
-
-  const noOpenModal = () =>{
-    setCloseModal(false)
-  }
-
+const Modal = ({showModal, closeModal}) => {
 
   return (
     <>
-    {showModal ? 
+    {showModal === true ? 
         <ModalContainer>
-          <ModalPosition>URL 링크 첨부</ModalPosition>
-          <CloseBtn onClick={noOpenModal} value={closeModal}>x</CloseBtn>
+          <ModalPosition>
+            <h4>URL 링크 첨부</h4>
+            <CloseBtn onClick={closeModal}>❌</CloseBtn>
+          </ModalPosition>
         </ModalContainer>
       : null}
     </>
