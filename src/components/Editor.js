@@ -3,11 +3,13 @@ import { useState } from "react";
 
 // components
 import Header from "./Header";
-import ModalBtn from "./Button/ModalBtn";
+import User from "./User"
+import Title from "./Title"
+import ModalBtn from "./ModalBtn";
 
 const EditorDiv = styled.div`
   height: 100vh;
-  width: 35vw;
+  width: 38vw;
 `;
 
 const Editor = (open) => {
@@ -15,8 +17,10 @@ const Editor = (open) => {
 
   return (
     <EditorDiv>
-      <Header center={"URL"} />
-      <ModalBtn />
+      <Header left={"<"} center={"URL 등록"} right={">"} />
+      <User left={"밝은_코브라"} right={'🔻'}/>
+      <Title/>
+      <ModalBtn/>
     </EditorDiv>
   );
 };
