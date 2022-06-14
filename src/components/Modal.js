@@ -72,7 +72,7 @@ const Modal = ({ showModal, closeModal }) => {
               placeholder="http://"
               required
             />
-            <SubmitBtnStyle>확인</SubmitBtnStyle>
+            <SubmitBtnStyle onClick={closeModal}>확인</SubmitBtnStyle>
           </UrlInputContainer>
         </ModalContainer>
       ) : null}
