@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { useState } from "react";
+import styled from 'styled-components'
+import { useState } from 'react'
+import OpenGraphPreview from './OpenGraphPreview'
 
 const ModalContainer = styled.div`
   position: fixed;
@@ -12,23 +13,23 @@ const ModalContainer = styled.div`
   background: #262626;
   text-align: center;
   color: white;
-`;
+`
 
 const ModalPosition = styled.div`
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const CloseBtn = styled.button`
   border: none;
   background-color: #262626;
   font-size: 16px;
   cursor: pointer;
-`;
+`
 
 const UrlInputContainer = styled.div`
   margin: 100px 0;
-`;
+`
 
 const UrlInputStyle = styled.input`
   background: none;
@@ -42,7 +43,7 @@ const UrlInputStyle = styled.input`
     font-size: 15px;
     color: c8c8c8;
   }
-`;
+`
 
 const SubmitBtnStyle = styled.button`
   margin-top: 100px;
@@ -51,10 +52,10 @@ const SubmitBtnStyle = styled.button`
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
-`;
+`
 
 const Modal = ({ showModal, closeModal }) => {
-  const [url, setUrl] = useState("");
+  const [data, setData] = useState('')
 
   return (
     <>
@@ -67,17 +68,18 @@ const Modal = ({ showModal, closeModal }) => {
           <UrlInputContainer>
             <UrlInputStyle
               type="url"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
+              value={data}
+              onChange={(e) => setData(e.target.value)}
               placeholder="http://"
               required
             />
             <SubmitBtnStyle onClick={closeModal}>확인</SubmitBtnStyle>
           </UrlInputContainer>
+          <OpenGraphPreview url={data} />
         </ModalContainer>
       ) : null}
     </>
-  );
-};
+  )
+}
 
-export default Modal;
+export default Modal
